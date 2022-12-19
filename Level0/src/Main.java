@@ -6,6 +6,52 @@ public class Main {
     }
 }
 
+
+
+/* level 0 짝수의 합 풀이완
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        boolean val = (0<n && 1000>=n);
+        if(val){
+            if(n<=1){
+                return 0;
+            }
+            if(n%2==0){
+                answer=n+solution(n-1);
+            }else{
+                answer=solution(n-1);
+            }
+        }
+        return answer;
+    }
+}
+
+/* level 0 두 수의 나누셈  1000곱 후 정수표기
+class Solution {
+    public int solution(int num1, int num2) {
+        int answer = 0;
+        boolean val = (0<num1 && 100>=num1 && 0<num2 && 100>=num2);
+        answer=(int)((double)num1/(double)num2*1000);
+        return answer;
+    }
+}
+
+/* 치킨쿠폰 풀이 완
+class Solution {
+    public int solution(int chicken) {
+        int answer = 0;
+        boolean val = (0<=chicken && 1000000>=chicken);
+        if(val){
+            while(chicken>=10){
+            answer += chicken/10;
+            chicken = (chicken/10)+(chicken%10);
+            }
+        }
+        return answer;
+    }
+}
+
 /* level 0 각도기 풀이 완
 class Solution {
     public int solution(int angle) {
