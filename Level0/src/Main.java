@@ -3,6 +3,12 @@ public class Main {
        // Solution test = new Solution();
         //System.out.println(test.solution(3,4));
         System.out.println("hello");
+        Main.test(4);
+    }
+
+    static int test(int a){
+        a += 10;
+        return a;
     }
 }
 
