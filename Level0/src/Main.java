@@ -2,16 +2,21 @@ public class Main {
     public static void main(String[] args) {
        // Solution test = new Solution();
         //System.out.println(test.solution(3,4));
-        System.out.println("hello");
-        Main.test(4);
-    }
-
-    static int test(int a){
-        a += 10;
-        return a;
+        int a++;
+        System.out.println("hello"+a);
     }
 }
-
+/*
+class Solution {
+    public int[] solution(int[] num_list) {
+        int[] answer = new int[2];
+        for(int i=0;i<num_list.length;i++){
+            if(num_list[i]%2==0) answer[0]++;
+            else answer[1]++;
+        }
+        return answer;
+    }
+}
 /* level 0 짝수의 합 풀이완
 class Solution {
     public int solution(int[] dot) {
