@@ -2,10 +2,11 @@ public class Main {
     public static void main(String[] args) {
        // Solution test = new Solution();
         //System.out.println(test.solution(3,4));
-        int a++;
-        System.out.println("hello"+a);
+        System.out.println("hello");
     }
 }
+
+
 /*
 class Solution {
     public int[] solution(int[] num_list) {
