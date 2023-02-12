@@ -3,6 +3,10 @@ public class Main {
        // Solution test = new Solution();
         //System.out.println(test.solution(3,4));
         System.out.println("hello");
+        test();
+    }
+    static void test(){
+        System.out.println("hello");
     }
 }
 
