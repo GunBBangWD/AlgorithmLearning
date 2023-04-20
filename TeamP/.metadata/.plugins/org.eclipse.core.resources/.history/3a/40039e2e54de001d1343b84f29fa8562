@@ -1,0 +1,12 @@
+package user;
+
+public class UsersDAO {
+	private int idx;
+	private String id;
+	private String name;
+	private String nickname;
+	private String email;
+	private String address;
+	private String phone;
+
+}

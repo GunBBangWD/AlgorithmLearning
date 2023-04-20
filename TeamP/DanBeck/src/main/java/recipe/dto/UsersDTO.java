@@ -1,6 +1,6 @@
 package recipe.dto;
 
-public class UsersDTO {
+public class UsersDto {
 	
 	private String user_idx;
 	private String user_id;

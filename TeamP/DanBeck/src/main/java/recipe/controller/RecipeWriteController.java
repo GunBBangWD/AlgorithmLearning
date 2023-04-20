@@ -27,29 +27,60 @@ public class RecipeWriteController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			req.getRequestDispatcher("/RecipeProject/RecipeInsert.jsp").forward(req, resp);
+			req.getRequestDispatcher("/RecipeProject/RecipeWrite.jsp").forward(req, resp);
 		}
 	
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("라이트두 두포스트 진입");
 		String user_idx = "1";
 		String recipe_name = req.getParameter("recipe_name");
 		String recipe_desc = req.getParameter("recipe_desc");
 		String recipe_amount_portion = req.getParameter("recipe_amount");
 		String recipe_cooking_time = req.getParameter("recipe_cooking_time");
 		String recipe_difficulty = req.getParameter("recipe_difficulty");
-		String recipe_image_url = "test";
-		RecipeDto recipeDto = new RecipeDto();
+		RecipeDto recipeDto = new RecipeDto(); //db에 저장해줄 DTO
 		recipeDto.setUser_idx(user_idx);
 		recipeDto.setRecipe_name(recipe_name);
 		recipeDto.setRecipe_desc(recipe_desc);
-		recipeDto.setAmount_portion(recipe_amount_portion);
-		recipeDto.setCooking_time(recipe_cooking_time);
-		recipeDto.setImage_url(recipe_image_url);
-		recipeDto.setDifficulty(recipe_difficulty);
+		recipeDto.setRecipe_people(recipe_amount_portion);
+		recipeDto.setRecipe_time(recipe_cooking_time);
+		
+		
+		System.out.println("파일 입력전");
+		//파일 이름설정
+		String mainPhoto=req.getPart("mainPhotoUpload").getSubmittedFileName();
+		String mainFileName=null;
+		if(mainPhoto.isEmpty())System.out.println("이즈엠프티 걸러짐");
+		System.out.println(req.getPart("mainPhotoUpload").getSubmittedFileName());
+		String fileName = req.getPart("mainPhotoUpload").getSubmittedFileName(); //업로드한 파일 이름 가져오기
+		System.out.println("이름지어줌");
+		String mainext = fileName.substring(fileName.lastIndexOf(".")); // 파일이름 자료형 잘라내기
+		mainFileName = user_idx+"_"+recipe_name+"_mainPhoto"+mainext; // 유저idx_
+		//파일 생성할 경로
+		String path = req.getServletContext().getRealPath("/Storage"); 
+//			mainFileName = path+"\\" + mainFileName;
+		InputStream is = req.getPart("mainPhotoUpload").getInputStream();
+		//서버 로컬 지정한 경로에 파일 생성
+		FileOutputStream os = new FileOutputStream(path+"\\"+mainFileName);
+		System.out.println(path);
+		byte[] buffer = new byte[1024];
+		while (is.read(buffer) > 0) {
+			os.write(buffer);
+		}
+		is.close();
+		os.close();
+		//DTO 파일 이름 넣기
+		recipeDto.setRecipe_image_url(mainFileName);
+		
+		System.out.println("파일 입력 후 파일 스트림 종료 후");
+		
+		recipeDto.setRecipe_difficulty(recipe_difficulty);
 		RecipeDao recipeDao = new RecipeDao();
+		System.out.println("라이트두 두포스트 인서트 직전");
 		recipeDao.insertRecipe(recipeDto);
+		System.out.println("라이트두 두포스트 인서트 후");
 		RecipeIngredientDto recipeIngredientDto = new RecipeIngredientDto();
 		IngredientDao ingredientDao = new IngredientDao();
 		
@@ -67,12 +98,14 @@ public class RecipeWriteController extends HttpServlet {
 		for (int i = 0; i < recipe_ingre_name.length; i++) {
 			if (!recipe_ingre_name[i].equals("")) {
 				recipeIngredientDto.setRecipe_id(recipe_id);
-				recipeIngredientDto.setAmount(ingredient_amount[i]);
+				recipeIngredientDto.setIngredient_amount(ingredient_amount[i]);
 				recipeIngredientDto.setIngredient_name(recipe_ingre_name[i]);
 				recipeIngredientDao.insertIngredient(recipeIngredientDto);
 			}
 		}
-
+		
+		
+		
 		RecipeStepDto stepDto = new RecipeStepDto();
 		RecipeStepDao stepDao = new RecipeStepDao();
 		String[] stepDesc = req.getParameterValues("step_text[]");

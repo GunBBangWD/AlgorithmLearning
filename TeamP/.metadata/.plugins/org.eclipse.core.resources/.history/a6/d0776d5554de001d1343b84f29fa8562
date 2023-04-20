@@ -1,0 +1,15 @@
+package user;
+
+import DBpackage.DBConnector;
+
+public class UsersDAO extends DBConnector{
+	public UsersDAO() {
+		super();
+	}
+	
+	
+	//필요한 부분 수업때 한거 참고해서 만드세요
+	
+	
+	
+}

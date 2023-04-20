@@ -22,6 +22,7 @@ public class DBConnectpool {
 			Context ctx = (Context)initCtx.lookup("java:comp/env");
 			DataSource source = (DataSource)ctx.lookup("dbcp_mysql");
 			con=source.getConnection();
+			System.out.println("커넥션 성공");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("DB CP connect fail");
