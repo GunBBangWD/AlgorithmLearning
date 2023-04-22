@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.StackOverflowError"/>
+    <fullyQualifiedTypeName name="java.lang.StrictMath"/>
+    <fullyQualifiedTypeName name="DBpackage.DBConnector"/>
+    <fullyQualifiedTypeName name="java.nio.file.ReadOnlyFileSystemException"/>
+    <fullyQualifiedTypeName name="recipe.dto.SessionDto"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="recipe.utility.NaverSmtp"/>
+</qualifiedTypeNameHistroy>
