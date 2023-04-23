@@ -1,0 +1,2 @@
+recipeDao.insertRecipe(recipeDto);
+		recipeDao.close();

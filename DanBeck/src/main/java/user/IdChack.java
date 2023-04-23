@@ -27,6 +27,7 @@ public class IdChack extends HttpServlet{
 			System.out.println("아이디중복");
 			jsonObject.addProperty("idchack", "아이디중복");
 		}
+		dao.close();
 	    response.setContentType("application/json;charset=utf-8");
         response.getWriter().write(jsonObject.toString());
 	}

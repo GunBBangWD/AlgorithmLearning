@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +11,15 @@
 <style>
    body{text-align: center;background-color:lightgoldenrodyellow;}
    h2{border:2px solid;width:300px;height:40px;margin:auto;background-color:white;}
-   .form-box{border:2px solid;width:300px;height:400px;margin:auto;background-color:white;}
+   .form-box{border:2px solid;width:300px;height:500px;margin:auto;background-color:white;}
 </style>
 </head>
 <body>
    <h2>회원가입 화면</h2>
    <form name="signup" action="emailPro.jsp" method="get" onsubmit="return checkForm()">
-   <input id="keyChack" type="text" value="">
-   <input id="idChack" type="text" value="">
+   <input id="keyChack" type="text" value="" style="visibility:hidden;">
+   <input id="idChack" type="text" value="" style="visibility:hidden;">
+   <input id="nickChack" type="text" value="" style="visibility:hidden;">
       <div class="form-box"><br>
       <div class="form-group">
          ＊ID:       <input type="text" id="id" placeholder="아이디를 입력하세요" />
@@ -31,7 +33,9 @@
          *Name:     <input type="text" id="name" placeholder="이름을 입력하세요" /><br><br>
       </div>
       <div class="form-group">
-         *NickName: <input type="text" id="nickname" placeholder="닉네임을 입력하세요" /><br><br>
+         *NickName: <input type="text" id="nickname" placeholder="닉네임을 입력하세요" />
+         <input id="nickChackBtn" type="button" value="닉네임중복확인">
+         <br><br>
       </div>
       <div class="form-group">
          *Email:    <input type="text" id="emaildata" name="email" placeholder="이메일을 입력하세요" /><br><br>
@@ -41,8 +45,13 @@
       			인증번호 입력:<input id="keydata" type="text" name="random" placeholder="인증번호를 입력하세요"/><br><br>
       			<button id="keygo" type="button">인증확인</button>
      		</div>
+     	주소
+				<input class="form-control" style="top: 5px;" name="user_address" id="m_addr" type="text" readonly>
+				  <input type="button" class="btn btn-primary btn-sm" value="주소찾기" onclick="sample6_execDaumPostcode()">
          
       </div>
+      
+      
       <input type="submit" value="회원가입"/></div>
    </form> 
 
@@ -51,6 +60,40 @@
 integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 crossorigin="anonymous"></script>
 <script>
+
+
+</script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+//주소관련 함수
+function sample6_execDaumPostcode() {
+	  new daum.Postcode({
+	    oncomplete: function(data) {
+	      var fullAddr = ''; 
+	      var extraAddr = '';
+	      if (data.userSelectedType === 'R') { 
+	        fullAddr = data.roadAddress;
+	      } else { 
+	        fullAddr = data.jibunAddress;
+	      }
+	      if (data.userSelectedType === 'R') {
+	        if (data.bname !== '') {
+	          extraAddr += data.bname;
+	        }
+	        if (data.buildingName !== '') {
+	          extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	        }
+	        fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
+	      }
+	      document.getElementById('m_addr').value = fullAddr;
+	      function handleClick() {
+	    	  sample6_execDaumPostcode();
+	    	  window.close(); // 팝업창에서 호출하는 경우에만 동작합니다.
+	    }
+	    }
+	}).open();
+}
+
 
 //아이디 중복여부 확인
 $(function() {
@@ -72,6 +115,50 @@ $(function() {
     });
 });
 
+//닉네임 중복여부 확인
+$(function() {
+    $("#nickChackBtn").click(function() {
+      $.ajax({
+        url : "../user/NickChack",  // 요청 URL
+        type : "post",                  // HTTP 메서드
+        data : {                       // 매개변수로 전달할 데이터
+            nick : $('#nickname').val()                  // 값보내는 예시
+        },
+        dataType : "json",      // 응답 데이터 형식 text, json, html
+        success : function(data){//idChack
+        			console.log("ajax 돌아옴")
+	        	   console.log(data.nickchack);
+	        	   $("#nickChack").val(data.nickchack);
+	        	},  // 요청 성공 시 호출할 메서드 설정
+        error : errFunc         // 요청 실패 시 호출할 메서드 설정
+      });
+    });
+});
+
+
+function checkNick(){
+    var nick = $('#nick').val(); 
+    $.ajax({
+        url:'NickCheck/' + nick, 
+        type:'post', 
+        data : {                       // 매개변수로 전달할 데이터
+            id : $('#id').val()                  // 값보내는 예시
+        },
+        dataType : 'json',
+        success:function(xhr){
+        	if(xhr.data){ 
+                $('.nick_ok').css("display","inline-block"); 
+                $('.nick_ok').css("color","#6A82FB"); 
+                $('.nick_already').css("display", "none");
+            } else { 
+                $('.nick_already').css("display","inline-block");
+                $('.nick_already').css("color","#ff0000"); 
+                $('.nick_ok').css("display", "none");
+            }
+        },
+    });
+};
+
 //이메일보내기
 $(function() {
     $("#emailChackBtn").click(function() {
@@ -90,6 +177,7 @@ $(function() {
       });
     });
 });
+
 // 이메일 인증 확인
 $(function() {
     $("#keygo").click(function() {

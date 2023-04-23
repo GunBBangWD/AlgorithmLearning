@@ -38,7 +38,7 @@
     -->
     <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
 	<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" initialSize="0" maxIdle="20" maxTotal="20" maxWaitMillis="5000" name="dbcp_my_oracle" password="gksrjs0425" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:xe" username="gunhee"/>		  
-	<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" initialSize="0" maxIdle="20" maxTotal="20" maxWaitMillis="5000" name="dbcp_mysql" password="gksrjs0425" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/DanBack?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC" username="root"/>
+	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" initialSize="0" maxIdle="20" maxTotal="20" maxWaitMillis="5000" name="dbcp_mysql" password="gksrjs0425" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/DanBack?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC" username="root"/>
   </GlobalNamingResources>
 
   <!-- A "Service" is a collection of one or more "Connectors" that share
@@ -155,7 +155,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
 
-      <Context docBase="C:\Users\hgh04\Documents\JSPteam2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\hgh04\Documents\JSPteam2\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DanBeck" path="/DanBeck" reloadable="true" source="org.eclipse.jst.jee.server:DanBeck"/></Host>
+      <Context docBase="C:\Users\hgh04\Documents\JSPteam\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\hgh04\Documents\JSPteam\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DanBeck" path="/DanBeck" reloadable="true" source="org.eclipse.jst.jee.server:DanBeck"/></Host>
     </Engine>
   </Service>
 </Server>

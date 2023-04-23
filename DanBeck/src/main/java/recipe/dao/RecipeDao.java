@@ -72,7 +72,7 @@ public class RecipeDao extends DBConnectpool {
 				dto.setRecipe_people(rs.getString("recipe_people"));
 				dto.setRecipe_time(rs.getString("recipe_time"));
 				dto.setRecipe_difficulty(rs.getString("recipe_difficulty"));
-				dto.setRecipe_image_url("recipe_image_url");
+				dto.setRecipe_image_url(rs.getString("recipe_image_url"));
 			}
 		} catch (Exception e) {
 			System.out.println("상세보기 불러오기 중 DB 오류");
@@ -117,6 +117,29 @@ public class RecipeDao extends DBConnectpool {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	
+	public int updateRecipe(RecipeDto dto) {
+	    int result = 0;
+	    String sql = "UPDATE recipe SET user_idx=?, recipe_name=?, recipe_desc=?, recipe_people=?, recipe_time=?, recipe_difficulty=?, recipe_image_url=? WHERE recipe_id=?";
+	    System.out.println(sql);
+	    System.out.println(dto);
+	    try {
+	        psmt = con.prepareStatement(sql);
+	        psmt.setString(1, dto.getUser_idx());
+	        psmt.setString(2, dto.getRecipe_name());
+	        psmt.setString(3, dto.getRecipe_desc());
+	        psmt.setString(4, dto.getRecipe_people());
+	        psmt.setString(5, dto.getRecipe_time());
+	        psmt.setString(6, dto.getRecipe_difficulty());
+	        psmt.setString(7, dto.getRecipe_image_url());
+	        psmt.setString(8, dto.getRecipe_id());
+	        result = psmt.executeUpdate();
+	    } catch (SQLException e) {
+	        System.out.println("실패");
+	        e.printStackTrace();
+	    }
+	    return result;
 	}
 
 	public String getLastRecipeId() {

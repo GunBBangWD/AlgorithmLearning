@@ -9,6 +9,7 @@ public class UsersDao extends DBConnectpool {
 		super();
 	}
 	public String loginProcess(String user_id, String user_pw) {  //customer 가 모델객체입니다.(로그인정보 저장된상태)
+		//아디비번 맞는지 확인
 		String result = "";
 		String sql = "select * from users where user_id=? and user_pw=?";
 		try {

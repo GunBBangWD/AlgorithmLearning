@@ -6,23 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="delete-comment"/>
+		<item key="selection" value="Dao"/>
 		<list key="findhistory">
-			<item value="delete-comment"/>
 			<item value="dao"/>
-			<item value="form-control"/>
-			<item value="comment_submit"/>
-			<item value="recipeDto"/>
-			<item value="fo"/>
-			<item value="form"/>
-			<item value="ingredientDao"/>
-			<item value="fileUpload"/>
-			<item value="input\"/>
-			<item value="input"/>
-			<item value=""/>
-			<item value="hid"/>
-			<item value="hidd"/>
-			<item value="hi"/>
+			<item value="RecipeInsert"/>
+			<item value="insertReview"/>
+			<item value="alertBack"/>
+			<item value="insertSteps"/>
+			<item value="al"/>
+			<item value="sample6_execDaumPostcode"/>
+			<item value="m_addr"/>
+			<item value="checkNick"/>
+			<item value="nick"/>
+			<item value="dto"/>
+			<item value="user"/>
+			<item value="user_idx"/>
+			<item value="user_id"/>
+			<item value="delete-comment"/>
 		</list>
 		<list key="replacehistory">
 		</list>

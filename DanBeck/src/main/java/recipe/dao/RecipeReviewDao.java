@@ -56,6 +56,8 @@ public class RecipeReviewDao extends DBConnectpool {
    }
    
    public int insertReview(RecipeReviewDto dto) {
+	   System.out.println("리뷰인서트진입");
+	   System.out.println(dto);
       int res=0;
       String sql = "insert into review (recipe_id, user_idx, review_rating, review_content) values(?,?,?,?)";
       try {
@@ -66,8 +68,8 @@ public class RecipeReviewDao extends DBConnectpool {
          psmt.setString(4, dto.getReview_content());
          res = psmt.executeUpdate();
       } catch (Exception e) {
-         System.out.println("리뷰 입력중 DB 오류");
-         e.printStackTrace();
+    	  System.out.println("리뷰 입력 중 DB 오류: " + e.getMessage());
+          e.printStackTrace();
       }
       return res;
    }

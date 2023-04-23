@@ -48,4 +48,18 @@ public class RecipeStepDao extends DBConnectpool {
 		return res;
 	}
 	
+	public void deleteSteps(String recipe_id) {
+		String sql = "delete from recipe_step where recipe_id=?";
+		try {
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, recipe_id);
+			psmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("조리과정 DB 삭제중 에러");
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 }

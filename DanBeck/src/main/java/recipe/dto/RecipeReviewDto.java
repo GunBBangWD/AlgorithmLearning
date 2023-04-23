@@ -53,6 +53,12 @@ public class RecipeReviewDto {
 	public void setReview_date(Timestamp review_date) {
 		this.review_date = review_date;
 	}
+	@Override
+	public String toString() {
+		return "RecipeReviewDto [review_id=" + review_id + ", recipe_id=" + recipe_id + ", user_idx=" + user_idx
+				+ ", user_nickname=" + user_nickname + ", review_rating=" + review_rating + ", review_content="
+				+ review_content + ", review_date=" + review_date + "]";
+	}
 	
 	
 	

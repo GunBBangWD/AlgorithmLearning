@@ -32,7 +32,7 @@ public class LoginController extends HttpServlet {
 		if(!check.equals("")) {
 			user=dao.sessionLogin(user_id);
 			session.setAttribute("user",user);
-			session.setMaxInactiveInterval(1800);
+			session.setMaxInactiveInterval(1800);//세션 유효시간
 			session = req.getSession();
 			SessionDto user2 = (SessionDto)session.getAttribute("user");
 			System.out.println(user2.getUser_idx());

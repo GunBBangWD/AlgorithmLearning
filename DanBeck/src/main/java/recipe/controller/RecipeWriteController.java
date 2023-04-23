@@ -30,7 +30,7 @@ public class RecipeWriteController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/RecipeProject/RecipeInsert.jsp").forward(req, resp);
+		req.getRequestDispatcher("/RecipeProject/RecipeWrite.jsp").forward(req, resp);
 	}
 
 	@Override
@@ -51,6 +51,7 @@ public class RecipeWriteController extends HttpServlet {
 		recipeDto.setRecipe_desc(recipe_desc);
 		recipeDto.setRecipe_people(recipe_amount_portion);
 		recipeDto.setRecipe_time(recipe_cooking_time);
+		recipeDto.setRecipe_difficulty(recipe_difficulty);
 		
 		
 		//파일입력부분
@@ -59,6 +60,7 @@ public class RecipeWriteController extends HttpServlet {
 			Alert.alertBack(resp, "파일 입력 필요");
 		}
 		String mainext = fileName.substring(fileName.lastIndexOf("."));
+		//파일 이름 같은계정 같은제목 같은 파일이름을 올릴시 비교할 수 잇는 예외 추가 필요
 		String mainFileName = user_idx + "_" + recipe_name + "_mainPhoto" + mainext;
 		String path = req.getServletContext().getRealPath("/Storage");
 		System.out.println(path);
@@ -77,10 +79,11 @@ public class RecipeWriteController extends HttpServlet {
 		System.out.println("파일생성완료");
 		//db입력
 		recipeDto.setRecipe_image_url(mainFileName);
-		recipeDto.setRecipe_difficulty(recipe_difficulty);
 		RecipeDao recipeDao = new RecipeDao();
 		
-		recipeDao.insertRecipe(recipeDto);
+		
+		
+//		recipeDao.insertRecipe(recipeDto);
 		
 		RecipeIngredientDto recipeIngredientDto = new RecipeIngredientDto();
 //		IngredientDao ingredientDao = new IngredientDao();  머하는부분인지 모르겠음
@@ -93,8 +96,32 @@ public class RecipeWriteController extends HttpServlet {
 		} catch (Exception e) {
 			System.out.println("Thread error");
 		}
+		
+		
+		//요리과정 비어있는지 확인
+		java.util.Collection<javax.servlet.http.Part> parts = req.getParts();
+		boolean hasFile = false;
+		if (parts != null && !parts.isEmpty()) {
+//			System.out.println("파일 비어있는지 확인용 시작------------------------");
+		    for (javax.servlet.http.Part part : parts) {
+		        if (part.getName().equals("fileUpload") && part.getSize() > 0) {
+		        	System.out.println(part.getName().equals("fileUpload"));
+		            hasFile = true;
+		            break;
+		        }
+		    }
+//		    System.out.println("파일 비어있는지 확인 끝------------------------");
+		}
+		
+		if (!hasFile) {
+			recipeDao.close();
+		    Alert.alertBack(resp, "요리 과정 사진을 입력하셔야 합니다.");
+		    System.out.println("요리과정 비어있음 체크완료");
+		    return;
+		}
 
 		//재료부분
+		recipeDao.insertRecipe(recipeDto);
 		String recipe_id = recipeDao.getLastRecipeId();
 		recipeDao.close();
 		
@@ -126,20 +153,20 @@ public class RecipeWriteController extends HttpServlet {
 		
 		int imageIndex = 1;
 		int stepIndex = 0;
-		java.util.Collection<javax.servlet.http.Part> parts = req.getParts();
-		boolean hasFile = false;
-		if (parts != null && !parts.isEmpty()) {
-//			System.out.println("파일 비어있는지 확인용 시작------------------------");
-		    for (javax.servlet.http.Part part : parts) {
-		        if (part.getName().equals("fileUpload") && part.getSize() > 0) {
-		        	System.out.println(part.getName().equals("fileUpload"));
-		            hasFile = true;
-		            break;
-		        }
-		    }
-//		    System.out.println("파일 비어있는지 확인 끝------------------------");
-		    
-		}
+//		java.util.Collection<javax.servlet.http.Part> parts = req.getParts();
+//		boolean hasFile = false;
+//		if (parts != null && !parts.isEmpty()) {
+////			System.out.println("파일 비어있는지 확인용 시작------------------------");
+//		    for (javax.servlet.http.Part part : parts) {
+//		        if (part.getName().equals("fileUpload") && part.getSize() > 0) {
+//		        	System.out.println(part.getName().equals("fileUpload"));
+//		            hasFile = true;
+//		            break;
+//		        }
+//		    }
+////		    System.out.println("파일 비어있는지 확인 끝------------------------");
+//		    
+//		}
 		System.out.println(hasFile);
 		
 		
@@ -151,6 +178,7 @@ public class RecipeWriteController extends HttpServlet {
 		    System.out.println("안내메시지부분 지남");
 		    stepDao.close();
 		} else {
+			System.out.println("과정부분 넣기 진입");
 			for (javax.servlet.http.Part file : parts) {
 //				System.out.println(file.getName());
 				if (!file.getName().equals("fileUpload")) {

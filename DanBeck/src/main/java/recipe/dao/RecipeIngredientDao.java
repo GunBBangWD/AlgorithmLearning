@@ -46,4 +46,16 @@ public class RecipeIngredientDao extends DBConnectpool {
 			e.printStackTrace();
 		}
 	}
+	
+	public void deleteIngredient(String recipe_id) {
+		String sql = "delete from recipe_ingredient where recipe_id=?";
+		try {
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, recipe_id);
+			psmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("재료 DB 삭제중 에러");
+			e.printStackTrace();
+		}
+	}
 }

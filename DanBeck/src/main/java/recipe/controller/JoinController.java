@@ -38,13 +38,14 @@ public class JoinController extends HttpServlet{
 		dto.setUser_address(user_address);
 		dto.setUser_phone(user_phone);
 		UsersDao dao = new UsersDao();
-		boolean flag = dao.idDuplicateCheck(user_id);
-		if(flag) {
-			dao.joinUser(dto);
+		if(dao.joinUser(dto)==0) {
 			dao.close();
-			resp.sendRedirect("../RecipeProject/Login.jsp");
+			System.out.println("회원가입 실패");
+			Alert.alertLocation(resp, "가입이 실패하였습니다", "../project/join.do");
 		}else {
-			Alert.alertLocation(resp, "가입이 되지 않았습니다", "../project/join.do");
+			dao.close();
+			System.out.println("회원가입 성공");
+			Alert.alertLocation(resp, "회원가입 성공", "../RecipeProject/Login.jsp");
 		}
 		
 	}

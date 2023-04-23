@@ -84,4 +84,22 @@ public class UsersDaoGun extends DBConnectpool {
 		}		
 		return res;
 	}
+	
+	public boolean nickDuplicateCheck(String user_nickname) {
+		boolean res = true;
+		String sql = "select user_nickname from users where user_nickname=?";
+		try {
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, user_nickname);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				res=false;
+				System.out.println("중복");
+			}
+		} catch (Exception e) {
+			System.out.println("중복 체크중 DB 에러");
+			e.printStackTrace();
+		}		
+		return res;
+	}
 }

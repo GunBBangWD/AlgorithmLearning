@@ -25,7 +25,7 @@ String key=null;
 		System.out.println(request.getParameter("email"));
 		// TODO Auto-generated method stub
 		Map<String, String> emailInfo = new HashMap();
-		emailInfo.put("from", "ushlove98@naver.com");  // 보내는 사람
+		emailInfo.put("from", "hgh0425@naver.com");  // 보내는 사람
 		emailInfo.put("to", request.getParameter("email"));      // 받는 사람
 		emailInfo.put("subject", "인증을 위한 메일");  // 제목
 

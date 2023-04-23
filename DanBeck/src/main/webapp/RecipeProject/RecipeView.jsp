@@ -18,10 +18,15 @@
    
 </head>
 <body>
+<jsp:include page="../projectResources/Header.jsp" flush="false"/>
    <div class="recipeView">
+   
       <div class="recipe_summary">
+        <button type="button" class="btn btn-primary" onclick="location.href='../project/RecipeEdit.do?recipe_id=${recipeDto.recipe_id}'">수정</button>
 
          <h3>${recipeDto.recipe_name}</h3>
+         
+         <img src="${pageContext.request.contextPath}/Storage/${recipeDto.recipe_image_url}" style="width: 400px;height: 300px;"/>
          <div class="summary_in">${recipeDto.recipe_desc}</div>
          <div class="summary_info">
             <span>${recipeDto.recipe_people}</span>&nbsp&nbsp <span>${recipeDto.recipe_time}</span>&nbsp&nbsp

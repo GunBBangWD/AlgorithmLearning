@@ -76,6 +76,7 @@ a.button:hover{
 </style>
 </head>
 <body>
+<jsp:include page="../projectResources/Header.jsp" flush="false"/>
 <jsp:include page="../projectResources/Top.jsp"/>
 <div>		
 			<table class="table-primary" border="1" style="width: 90%;">

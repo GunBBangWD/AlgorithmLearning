@@ -46,13 +46,18 @@ public class ReviewWriteController extends HttpServlet{
       dao.insertReview(dto);
       
       String review_id = dao.getLastReviewId();
+      dao.close();
       
       ReviewImgDao idao = new ReviewImgDao();
       java.util.Collection<javax.servlet.http.Part> parts = req.getParts();
       int imageIndex=1;
       for (javax.servlet.http.Part file : parts) {
-         if (!file.getName().equals("fileUpload"))
-            continue;
+	    	 if (!file.getName().equals("fileUpload")) {
+	    	        continue;
+	    	    }
+	         if (file.getSize() == 0) {
+	             continue; // 파일이 업로드되지 않은 경우 루프를 건너뜁니다.
+	         }
             ReviewImgDto idto = new ReviewImgDto();
             String originName = file.getSubmittedFileName();
             String ext = originName.substring(originName.lastIndexOf("."));
@@ -74,9 +79,8 @@ public class ReviewWriteController extends HttpServlet{
          fis.close();
          fos.close();
       }
-      resp.sendRedirect("../project/recipeview.do?recipe_id="+recipe_id);
-      dao.close();
       idao.close();
+      resp.sendRedirect("../project/recipeview.do?recipe_id="+recipe_id);
       
    }
 }
