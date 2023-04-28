@@ -89,4 +89,18 @@ public class RecipeReviewDao extends DBConnectpool {
       return lastIndex;
    }
    
+   
+   public int deleteReview(String review_id) {
+		int res = 0;
+		String sql = "DELETE FROM review WHERE review_id=?";
+		try {
+			psmt= con.prepareStatement(sql);
+			psmt.setString(1, review_id);
+			res = psmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("리뷰 삭제중 DB 에러");
+			e.printStackTrace();
+		}
+		return res;
+	}
 }

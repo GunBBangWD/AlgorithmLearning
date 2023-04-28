@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ㅎㅇ</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
 <style>
 	a.button {
 	font-family: 'Gowun Dodum', sans-serif;
@@ -23,8 +24,6 @@
 	border-radius: 5px;
 	transition: all 0.3s ease;	
 }
-
-
 a.button:hover{
 	background:	#aabb97;
 	color: white;
@@ -58,26 +57,43 @@ a.button:hover{
 	border-radius: 5px;
 	transition: all 0.3s ease;
 }
-
-
-
 .pagenum:hover, .active:hover{
 	background:	#aabb97;
 	color: white;
 	box-shadow: 0 3px 3px 0 rgba(0,0,0,0.24), 0 3px 3px 0 rgba(0,0,0,0.19);
 }
-
-
 .current {
 	color : #c8c8c8;
 	border : 1px solid gray;
 	background: white;
 }
+.cate_list{
+	text-decoration: none;
+}
+
 </style>
 </head>
 <body>
-<jsp:include page="../projectResources/Header.jsp" flush="false"/>
-<jsp:include page="../projectResources/Top.jsp"/>
+<jsp:include page="../projectResources/Header.jsp"/>
+<br>
+<div>
+	<table>
+		<tr>
+			<th>방법별</th>
+			<td><a class="cate_list" href="../project/recipeList.do?page=1">전체</a></td>
+			<c:forEach var="cate1" items="${cate1}">
+				<td><a class="cate_list" href="../project/recipeList.do?page=1&cate1=${cate1.category_kind_idx}&amp;cate2=${param.cate2}">${cate1.category_kind_name}&nbsp</a></td>
+			</c:forEach>
+		</tr>
+		<tr>
+			<th>재료별</th>
+			<c:forEach var="cate2" items="${cate2}">
+				<td><a class="cate_list" href="../project/recipeList.do?page=1&cate1=${param.cate1}&amp;cate2=${cate2.category_kind_idx}">${cate2.category_kind_name}&nbsp</a></td>
+			</c:forEach>
+		</tr>
+	</table>
+</div>
+
 <div>		
 			<table class="table-primary" border="1" style="width: 90%;">
 				<tr>
@@ -89,11 +105,11 @@ a.button:hover{
 				</tr>			
 				<c:forEach var="rec" items="${list}" varStatus="stat">
 				<tr>
-						<td>${pageDto.totalCount-((pageDto.currentPage-1)*pageDto.pageSize)-stat.index}</td>
+						<td>${page.totalCount-((page.currentPage-1)*page.pageSize)-stat.index}</td>
 						<td><img src="${pageContext.request.contextPath}/Storage/${rec.recipe_image_url}" style="width: 150px;height: 150px;"/>
 						<td><a href="../project/recipeview.do?recipe_id=${rec.recipe_id}">${rec.recipe_name}</a></td>
 						<td>${rec.user_nickname}</td>
-						<td>${rec.recipe_visitCount}</td>
+						<td>${rec.recipe_visitcount}</td>
 				</tr>		
 					</c:forEach>
 			</table>
@@ -101,21 +117,39 @@ a.button:hover{
  	<a class="button" href='../RecipeProject/Home.jsp'>홈 </a>
  	</div>
 
-		<div style="text-align: center;">
-			<c:if test="${pageDto.startPage !=1 }">
-				<a class="pagenum" href="?page=1">&lt;&lt;</a>
-				<a class="pagenum" href="?page=${pageDto.startPage-1}">&lt;</a>
-			</c:if>
-			<c:forEach var="i" begin="${pageDto.startPage }"
-				end="${pageDto.endPage }">
-				<a class="pagenum <c:if test="${pageDto.currentPage == i }">current</c:if>" href="?page=${i }">${i }</a>
-			</c:forEach>
+	<c:if test="${page.cat1==null&&page.cat2==null}">
+ 	<div style="text-align: center;">
+		<a class="pagenum" href="?page=1">&lt;&lt;</a>   
+		<a class="${page.startPage>1? 'pagenum':'none'}" href="?page=${page.startPage-1 }">&lt;</a>  
+		<!-- 현재페이지값을 변경 : blists.getStartPage() -1 -->
+	<c:forEach var="i" begin="${page.startPage }" end="${page.endPage}">  <!-- 페이지목록의 범위  -->
+		<a class="pagenum" href="?page=${i}">${i}</a>  
+	</c:forEach>
+	
+	<!-- 현재페이지값을 변경 : blists.getEndPage() +1 -->
+	<a class="${page.endPage!=page.totalPage? 'pagenum':'none'}" href="?page=${page.endPage+1 }">&gt;</a> 
+	<a class="pagenum" href="?page=${page.totalPage }">&gt;&gt;</a>
+</div>
+</c:if>
 
-			<c:if test="${pageDto.endPage !=pageDto.totalPage }">
-				<a class="pagenum" href="?page=${pageDto.endPage+1}">&gt;</a>
-				<a class="pagenum" href="?page=${pageDto.totalPage }">&gt;&gt;</a>
-			</c:if>
-		</div>
+
+<!-- 페이지 이동 :검색결과 보기 -->
+ <c:if test="${param.cate1!=null||param.cate2!=null}">
+ <div style="text-align: center;">
+	<a class="pagenum" href="?page=1&cate1=${param.cate1}&cate2=${param.cate2}">&lt;&lt;</a>   <!-- 요청url은 동일하고 파라미터만 변경됩니다. -->
+	<a class="${page.startPage>1? 'pagenum':'none'}" href="?page=${page.startPage-1 }&cate1=${page.cat1}&cate2=${page.cat2}">&lt;</a>  
+	<!-- 현재페이지값을 변경 : blists.getStartPage() -1 -->
+	
+	<c:forEach var="i" begin="${page.startPage }" end="${page.endPage}">  <!-- 페이지목록의 범위  -->
+		<a class="pagenum" href="?page=${i}&cate1=${param.cate1}&cat2=${param.cate2}">${i}</a>     <!-- 현재페이지 i값으로 변경  -->
+	</c:forEach>
+	
+	<!-- 현재페이지값을 변경 : blists.getEndPage() +1 -->
+	<a class="${page.endPage!=page.totalPage? 'pagenum':'none'}" href="?page=${page.endPage+1 }&cat1=${page.cat1}&cat2=${page.cat2}">&gt;</a> 
+	<a class="pagenum" href="?page=${page.totalPage }&cate1=${param.cate1}&cate2=${param.cate1}">&gt;&gt;</a>
+</div>
+</c:if>
+
 
 
 </body>

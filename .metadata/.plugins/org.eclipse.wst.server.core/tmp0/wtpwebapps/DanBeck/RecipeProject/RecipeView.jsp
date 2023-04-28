@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>개발중임</title>
+<title>상세 레시피</title>
 <link rel="styleSheet" href="../projectResources/css/RecipeView.css">
 <link
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
@@ -15,60 +15,174 @@
    crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-   
+
+<style>
+.recipe_summary {
+   position: relative;
+   padding: 10px 18px 10px 24px;
+   font-size: 16px;
+   line-height: 170%;
+   width: 950px;
+   margin: 0 auto;
+}
+
+.review_user_info{
+   display:flex;
+}
+
+.summary_in {
+   position: relative;
+   padding: 10px 18px 10px 24px;
+   font-size: 16px;
+   line-height: 170%;
+   width: 90%;
+   margin: 0 auto;
+   text-align: center;
+}
+
+.summary_info {
+    padding: 2px 15px 0;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.divider {
+    border-top: none;
+    margin: 10px 0;
+}
+
+.recipe_image_wrapper {
+    text-align: center;
+}
+
+.recipe_name {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.recipe_image {
+    width: 650px;
+    height: 400px;
+}
+
+.ingredient_list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.ingredient_list li {
+  width: 48%;
+  margin-bottom: 10px;
+}
+
+.step_title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 20px 20px;
+}
+
+.recipe_title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 20px 20px;
+}
+.comment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.comment_user_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment_content {
+  margin-top: 10px;
+}
+.stepDiv1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepDiv1 li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.step_left {
+  flex: 1;
+}
+
+.step_right {
+  margin-left: 20px;
+}
+
+</style>
 </head>
 <body>
-<jsp:include page="../projectResources/Header.jsp" flush="false"/>
    <div class="recipeView">
+   <jsp:include page="../projectResources/Header.jsp"/>
+   <div class="form-group d-flex justify-content-center align-items-center">
+                    <input type="button" class="btn btn-primary" value="수정" style="margin: 10px;" onclick="location.href='../project/RecipeEdit.do?recipe_id=${recipeDto.recipe_id}';">
+<%--                     <input type="button" class="btn btn-primary" value="삭제" style="margin: 10px;" onclick="location.href='../project/RecipeEdit.do?recipe_id=${recipeDto.recipe_id}';"> --%>
+                </div>
    
       <div class="recipe_summary">
-        <button type="button" class="btn btn-primary" onclick="location.href='../project/RecipeEdit.do?recipe_id=${recipeDto.recipe_id}'">수정</button>
-
-         <h3>${recipeDto.recipe_name}</h3>
-         
-         <img src="${pageContext.request.contextPath}/Storage/${recipeDto.recipe_image_url}" style="width: 400px;height: 300px;"/>
-         <div class="summary_in">${recipeDto.recipe_desc}</div>
-         <div class="summary_info">
-            <span>${recipeDto.recipe_people}</span>&nbsp&nbsp <span>${recipeDto.recipe_time}</span>&nbsp&nbsp
+      <div style="background-color: white; margin-bottom: 20px;">
+         <h1 class="recipe_name">${recipeDto.recipe_name}</h1><br>
+         <div class="recipe_image_wrapper"><img src="${pageContext.request.contextPath}/Storage/${recipeDto.recipe_image_url}" class="recipe_image"/></div><br>
+         <div class="summary_in">${recipeDto.recipe_desc}</div><br>
+         <div class="summary_info" style="opacity: 0.5;">
+            <span>${recipeDto.recipe_people}</span>&nbsp&nbsp&nbsp <span>${recipeDto.recipe_time}</span>&nbsp&nbsp&nbsp
             <span>${recipeDto.recipe_difficulty}</span>
-         </div>
+         </div></div>
 
-         <div class="recipe_ingredient">
-            <div class="recipe_title">재료</div>
-            <div class="recipe_type">
-               <ul>
-                  <c:set var="has1" value="false" />
-                  <c:set var="has2" value="false" />
-                  <c:forEach var="ingre" items="${ingreList}">
-                  <%--    <c:if test="${ingre.ingredient_type=='재료' && !has1}">
-                        <c:set var="has1" value="true" />
-                        <span>재료</span>
-                     </c:if>
-                     <c:if test="${ingre.ingredient_type=='양념' && !has2}">
-                        <c:set var="has2" value="true" />
-                        <span>양념</span>
-                     </c:if> --%>
-                     <li style="list-style-type: none;">${ingre.ingredient_name}</li>
-                     <li style="list-style-type: none;">${ingre.ingredient_amount}</li>
-                     <hr class="divider"/>
-                  </c:forEach>
-               </ul>
-            </div>
-         </div>
-         <div class="recipe_step">
-            <div class="step_title">조리순서</div>
-               <div class="stepDiv1">
-                  <ul>
-                     <c:forEach var="stepList" items="${stepList}">
-                        <div class="step_middle">${stepList.step_desc}</div>
-                        <div class="step_right"><img src="${pageContext.request.contextPath}/Storage/${stepList.step_image_url}" style="width: 150px;height: 150px;"/></div>
-                     </c:forEach>
-                  </ul>
-               </div>
-         </div>
-         <br> <br>
 
-         <div class="recipe_review">
+      
+      <hr>
+      <div class="recipe_ingredient" style="background-color:white;">
+        <div class="recipe_title">재료</div>
+        <div class="recipe_type">
+          <ul class="ingredient_list">
+            <c:set var="has1" value="false" />
+            <c:set var="has2" value="false" />
+            <c:forEach var="ingre" items="${ingreList}">
+              <li>
+                <span>${ingre.ingredient_name}</span>&nbsp&nbsp&nbsp
+                <span>${ingre.ingredient_amount}</span>
+              </li>
+            </c:forEach>
+          </ul>
+        </div>
+      </div>
+
+         
+         
+         
+         <hr>
+      <div class="recipe_step" style="background-color:white; margin-bottom: 20px;">
+        <div class="step_title">조리순서</div>
+        <div class="stepDiv1">
+          <ul>
+            <c:forEach var="stepList" items="${stepList}" varStatus="status">
+              <li>
+                <div class="step_left">${status.index + 1}. ${stepList.step_desc}</div>
+                <div class="step_right"><img src="${pageContext.request.contextPath}/Storage/${stepList.step_image_url}" style="width: 150px;height: 150px; margin-right: 20px;"/></div>
+              </li>
+            </c:forEach>
+          </ul>
+          <br>
+        </div>
+      </div>
+
+      <hr>
+
+         <div class="recipe_review" >
             <div class="review_title">
                <h3>
                   요리 후기 <span>${ReviewCount}</span>
@@ -96,7 +210,7 @@
             <button type="button" onclick="location.href='../project/writeReview.do?recipe_id=${recipeDto.recipe_id}'" type="button" id="writeReview" class="btn btn-outline-secondary">리뷰 작성하기</button>
             </div>
          </div>
-         <br> <br>
+         <br> <br><hr>
 
          <div class="recipe_comment" id="recipe_comment">
             <div class="comment_title">
@@ -105,14 +219,23 @@
                      댓글<span>${commentCount}</span>
                   </h3>
                   <hr class="divider"/>
-                  <c:forEach var="commentList" items="${commentList}">
-                  <div class="comment_user_info">
+               <c:forEach var="commentList" items="${commentList}">
+                 <div class="comment">
+                   <div class="comment_user_info">
                      <h4>${commentList.user_nickname}</h4>
-                     <c:if test="${sessionScope.user.user_idx==commentList.user_idx}"> <button type="button" class="delete_comment" data-comment-id="${commentList.comment_id}">삭제</button></c:if>
-                  </div>
-                  <div class="comment_content">${commentList.comment_content}</div>
-                  <hr class="divider"/>
-                  </c:forEach>
+                     <c:if test="${sessionScope.user.user_idx==commentList.user_idx}">
+                       <button type="button" class="delete_comment" data-comment-id="${commentList.comment_id}">삭제</button>
+                     </c:if>
+                   </div>
+                   <div class="comment_content">
+                     ${commentList.comment_content}
+                   </div>
+                 </div>
+                 <hr class="divider"/>
+               </c:forEach>
+
+
+
                </div>
             </div>
             <br><br>

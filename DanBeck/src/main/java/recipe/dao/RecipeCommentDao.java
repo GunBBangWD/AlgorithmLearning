@@ -10,21 +10,6 @@ public class RecipeCommentDao extends DBConnectpool {
 	public RecipeCommentDao() {
 		super();
 	}
-	
-	public int deleteComment(String comment_id) {
-	      int result=0;
-	      String sql = "DELETE FROM recipe_comment WHERE comment_id=?";
-	      try {
-	         psmt=con.prepareStatement(sql);
-	         psmt.setString(1, comment_id);
-	         result = psmt.executeUpdate();
-	         System.out.println("댓글 삭제 완료");
-	      } catch (Exception e) {
-	         System.out.println("댓글 삭제 중 DB 에러");
-	         e.printStackTrace();
-	      }
-	      return result;
-	   }
 
 	public int getCommentCount(String recipe_id) {
 		int count=0;
@@ -82,6 +67,20 @@ public class RecipeCommentDao extends DBConnectpool {
 		return result;
 	}
 	
-
+	public int deleteComment(String comment_id) {
+		int result=0;
+		String sql = "DELETE FROM recipe_comment WHERE comment_id=?";
+		try {
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, comment_id);
+			result = psmt.executeUpdate();
+			System.out.println("댓글 삭제 완료");
+		} catch (Exception e) {
+			System.out.println("댓글 삭제 중 DB 에러");
+			e.printStackTrace();
+		}
+		return result;
+	}
 
 }
+

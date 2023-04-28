@@ -4,6 +4,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -13,10 +17,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import recipe.dao.IngredientDao;
+import recipe.dao.RecipeCategoryKindDao;
 import recipe.dao.RecipeDao;
 import recipe.dao.RecipeIngredientDao;
 import recipe.dao.RecipeStepDao;
+import recipe.dto.RecipeCategoryKindDto;
 import recipe.dto.RecipeDto;
 import recipe.dto.RecipeIngredientDto;
 import recipe.dto.RecipeStepDto;
@@ -30,6 +35,17 @@ public class RecipeWriteController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		RecipeCategoryKindDao rckDao= new RecipeCategoryKindDao();
+		Map<String, Object> map = new HashMap<>();
+		List<RecipeCategoryKindDto> cate1 = new ArrayList<>();
+		List<RecipeCategoryKindDto> cate2 = new ArrayList<>();
+		cate1 = rckDao.cateList("방법별");
+		cate2 = rckDao.cateList("재료별");
+		rckDao.close();
+		map.put("cate1", cate1);
+		map.put("cate2", cate2);
+		
+		req.setAttribute("map", map);
 		req.getRequestDispatcher("/RecipeProject/RecipeWrite.jsp").forward(req, resp);
 	}
 
@@ -74,6 +90,12 @@ public class RecipeWriteController extends HttpServlet {
 		}
 		is.close();
 		os.close();
+		
+		
+		String cate1 = req.getParameter("cate1");
+		String cate2 = req.getParameter("cate2");
+		recipeDto.setCate1(cate1);
+		recipeDto.setCate2(cate2);
 		
 		
 		System.out.println("파일생성완료");

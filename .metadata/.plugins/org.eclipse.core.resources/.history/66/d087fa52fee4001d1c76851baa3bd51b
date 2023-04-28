@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_dT2TQOT6Ee22rp5Kgxfxyw">
+  <modelElement href="DanBeck2.uml#_c0WT0OT6Ee22rp5Kgxfxyw"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e52nwOT6Ee22rp5Kgxfxyw" name="CommentDeleteController">
+    <modelElement href="DanBeck2.uml#_c28U0OT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e52nweT6Ee22rp5Kgxfxyw" position="50.0,50.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e52nwuT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c2874OT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e52nw-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c2-xEOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e52nxOT6Ee22rp5Kgxfxyw" label="+"/>
+    <operations xmi:id="_e52nxeT6Ee22rp5Kgxfxyw" name="service">
+      <modelElement href="DanBeck2.uml#_dCTQQOT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e52nxuT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCWTkOT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e52nx-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e52nyOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e52nyeT6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCTQQeT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e52nyuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e52ny-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e52nzOT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCTQQuT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e52nzeT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e52nzuT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e55rEOT6Ee22rp5Kgxfxyw" name="CommentWriteController">
+    <modelElement href="DanBeck2.uml#_c3CbcOT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e55rEeT6Ee22rp5Kgxfxyw" position="-450.0,50.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e55rEuT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c3DCgOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e55rE-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c3EQoOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e55rFOT6Ee22rp5Kgxfxyw" label="+"/>
+    <operations xmi:id="_e55rFeT6Ee22rp5Kgxfxyw" name="doPost">
+      <modelElement href="DanBeck2.uml#_dCW6oOT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e55rFuT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCW6o-T6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e55rF-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e55rGOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e55rGeT6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCW6oeT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e55rGuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e55rG-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e55rHOT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCW6ouT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e55rHeT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e55rHuT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e565MOT6Ee22rp5Kgxfxyw" name="HomeController">
+    <modelElement href="DanBeck2.uml#_c3Gs4OT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e565MeT6Ee22rp5Kgxfxyw" position="527.0,94.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_e565MuT6Ee22rp5Kgxfxyw" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e598gOT6Ee22rp5Kgxfxyw" name="LoginController">
+    <modelElement href="DanBeck2.uml#_c3OosOT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e598geT6Ee22rp5Kgxfxyw" position="-938.0,31.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e598guT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c3PPwOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e598g-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c3Qd4OT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e598hOT6Ee22rp5Kgxfxyw" label="+"/>
+    <operations xmi:id="_e598heT6Ee22rp5Kgxfxyw" name="doGet">
+      <modelElement href="DanBeck2.uml#_dCalAOT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e598huT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCbMEOT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e598h-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e598iOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e598ieT6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCalAeT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e598iuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e598i-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e598jOT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCalAuT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e598jeT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e598juT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_e598j-T6Ee22rp5Kgxfxyw" name="doPost">
+      <modelElement href="DanBeck2.uml#_dCbMEuT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e598kOT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCbzIOT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e598keT6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e598kuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e598k-T6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCbME-T6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e598lOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e598leT6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e598luT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCbMFOT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e598l-T6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e598mOT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e6DcEOT6Ee22rp5Kgxfxyw" name="RecipeEditController">
+    <modelElement href="DanBeck2.uml#_c3YZsOT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e6DcEeT6Ee22rp5Kgxfxyw" position="-1434.0,5.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e6DcEuT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c3Zn0OT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e6DcE-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c3a18OT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e6DcFOT6Ee22rp5Kgxfxyw" label="+"/>
+    <attributes xmi:id="_e6DcFeT6Ee22rp5Kgxfxyw" defaultValue="&quot;&quot;" name="recipe_id">
+      <modelElement href="DanBeck2.uml#_dC5tMOT6Ee22rp5Kgxfxyw"/>
+      <visibility xmi:id="_e6DcFuT6Ee22rp5Kgxfxyw" label="~"/>
+      <cardinality xmi:id="_e6DcF-T6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <type xmi:id="_e6DcGOT6Ee22rp5Kgxfxyw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_e6DcGeT6Ee22rp5Kgxfxyw" name="doGet">
+      <modelElement href="DanBeck2.uml#_dCdoUOT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e6DcGuT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCdoU-T6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e6DcG-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e6DcHOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e6DcHeT6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCdoUeT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6DcHuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6DcH-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e6DcIOT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCdoUuT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6DcIeT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6DcIuT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_e6DcI-T6Ee22rp5Kgxfxyw" name="doPost">
+      <modelElement href="DanBeck2.uml#_dCePYOT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e6DcJOT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCePY-T6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e6DcJeT6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e6DcJuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e6DcJ-T6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCePYeT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6DcKOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6DcKeT6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e6DcKuT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCePYuT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6DcK-T6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6DcLOT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e6HGcOT6Ee22rp5Kgxfxyw" name="RecipeListController">
+    <modelElement href="DanBeck2.uml#_c3o4YOT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e6HGceT6Ee22rp5Kgxfxyw" position="1692.0,50.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e6HGcuT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c3qGgOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e6HGc-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c3qtkOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e6HGdOT6Ee22rp5Kgxfxyw" label="+"/>
+    <operations xmi:id="_e6HGdeT6Ee22rp5Kgxfxyw" name="doGet">
+      <modelElement href="DanBeck2.uml#_dCfdgOT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e6HGduT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCfdg-T6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e6HGd-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e6HGeOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e6HGeeT6Ee22rp5Kgxfxyw" name="request">
+        <modelElement href="DanBeck2.uml#_dCfdgeT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6HGeuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6HGe-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e6HGfOT6Ee22rp5Kgxfxyw" name="response">
+        <modelElement href="DanBeck2.uml#_dCfdguT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6HGfeT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6HGfuT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e6I7oOT6Ee22rp5Kgxfxyw" name="RecipeViewController">
+    <modelElement href="DanBeck2.uml#_c3r7sOT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e6I7oeT6Ee22rp5Kgxfxyw" position="-1898.0,50.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e6I7ouT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c3siwOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e6I7o-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c3tw4OT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e6I7pOT6Ee22rp5Kgxfxyw" label="+"/>
+    <operations xmi:id="_e6I7peT6Ee22rp5Kgxfxyw" name="doGet">
+      <modelElement href="DanBeck2.uml#_dCgEkeT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e6I7puT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCgroOT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e6I7p-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e6I7qOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e6I7qeT6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCgEkuT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6I7quT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6I7q-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e6I7rOT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCgEk-T6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6I7reT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6I7ruT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e6LX4OT6Ee22rp5Kgxfxyw" name="RecipeWriteController">
+    <modelElement href="DanBeck2.uml#_c3u_AOT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e6LX4eT6Ee22rp5Kgxfxyw" position="2207.0,31.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e6LX4uT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c3wNIOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e6LX4-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c3xbQOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e6LX5OT6Ee22rp5Kgxfxyw" label="+"/>
+    <operations xmi:id="_e6LX5eT6Ee22rp5Kgxfxyw" name="doGet">
+      <modelElement href="DanBeck2.uml#_dChSsOT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e6LX5uT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCh5wOT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e6LX5-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e6LX6OT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e6LX6eT6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dChSseT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6LX6uT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6LX6-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e6LX7OT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dChSsuT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6LX7eT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6LX7uT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_e6LX7-T6Ee22rp5Kgxfxyw" name="doPost">
+      <modelElement href="DanBeck2.uml#_dCig0OT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e6LX8OT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCjH4OT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e6LX8eT6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e6LX8uT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e6LX8-T6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCig0eT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6LX9OT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6LX9eT6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e6LX9uT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCig0uT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6LX9-T6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6LX-OT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e6QQYOT6Ee22rp5Kgxfxyw" name="ReviewWriteController">
+    <modelElement href="DanBeck2.uml#_c3260OT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e6QQYeT6Ee22rp5Kgxfxyw" position="2701.0,31.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e6QQYuT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c33h4OT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e6QQY-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c34wAOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e6QQZOT6Ee22rp5Kgxfxyw" label="+"/>
+    <operations xmi:id="_e6QQZeT6Ee22rp5Kgxfxyw" name="doGet">
+      <modelElement href="DanBeck2.uml#_dCk9EOT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e6QQZuT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dClkIOT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e6QQZ-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e6QQaOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e6QQaeT6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCk9EeT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6QQauT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6QQa-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e6QQbOT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCk9EuT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6QQbeT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6QQbuT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_e6QQb-T6Ee22rp5Kgxfxyw" name="doPost">
+      <modelElement href="DanBeck2.uml#_dClkIuT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e6QQcOT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCmLMOT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e6QQceT6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e6QQcuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e6QQc-T6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dClkI-T6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6QQdOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6QQdeT6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e6QQduT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dClkJOT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6QQd-T6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6QQeOT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e6N0IOT6Ee22rp5Kgxfxyw" name="ReviewDeleteController">
+    <modelElement href="DanBeck2.uml#_c30ekOT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e6N0IeT6Ee22rp5Kgxfxyw" position="-2373.0,50.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e6N0IuT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c31FoOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e6N0I-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c32TwOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e6N0JOT6Ee22rp5Kgxfxyw" label="+"/>
+    <operations xmi:id="_e6N0JeT6Ee22rp5Kgxfxyw" name="doGet">
+      <modelElement href="DanBeck2.uml#_dCju8OT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e6N0JuT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCkWAOT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e6N0J-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e6N0KOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e6N0KeT6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCju8eT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6N0KuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6N0K-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e6N0LOT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCju8uT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6N0LeT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6N0LuT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e58HUOT6Ee22rp5Kgxfxyw" name="JoinController">
+    <modelElement href="DanBeck2.uml#_c3H7AOT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e58HUeT6Ee22rp5Kgxfxyw" position="699.0,31.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e58HUuT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c3IiEOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e58HU-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c3KXQOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e58HVOT6Ee22rp5Kgxfxyw" label="+"/>
+    <operations xmi:id="_e58HVeT6Ee22rp5Kgxfxyw" name="doGet">
+      <modelElement href="DanBeck2.uml#_dCXhseT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e58HVuT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCYIwOT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e58HV-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e58HWOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e58HWeT6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCXhsuT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e58HWuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e58HW-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e58HXOT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCXhs-T6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e58HXeT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e58HXuT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_e58HX-T6Ee22rp5Kgxfxyw" name="doPost">
+      <modelElement href="DanBeck2.uml#_dCYv0OT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e58HYOT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCZW4eT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e58HYeT6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e58HYuT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e58HY-T6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCYv0eT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e58HZOT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e58HZeT6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e58HZuT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCZW4OT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e58HZ-T6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e58HaOT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_e6A_0OT6Ee22rp5Kgxfxyw" name="LogoutController">
+    <modelElement href="DanBeck2.uml#_c3UvUOT6Ee22rp5Kgxfxyw"/>
+    <visualProperties xmi:id="_e6A_0eT6Ee22rp5Kgxfxyw" position="1202.0,50.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_e6A_0uT6Ee22rp5Kgxfxyw" name="LegacyStyledElement">
+      <modelElement href="DanBeck2.uml#_c3VWYOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <stereotypes xmi:id="_e6A_0-T6Ee22rp5Kgxfxyw" name="Annotations">
+      <modelElement href="DanBeck2.uml#_c3WkgOT6Ee22rp5Kgxfxyw"/>
+    </stereotypes>
+    <visibility xmi:id="_e6A_1OT6Ee22rp5Kgxfxyw" label="+"/>
+    <operations xmi:id="_e6A_1eT6Ee22rp5Kgxfxyw" name="doGet">
+      <modelElement href="DanBeck2.uml#_dCcaMOT6Ee22rp5Kgxfxyw"/>
+      <stereotypes xmi:id="_e6A_1uT6Ee22rp5Kgxfxyw" name="Annotations">
+        <modelElement href="DanBeck2.uml#_dCdBQOT6Ee22rp5Kgxfxyw"/>
+      </stereotypes>
+      <visibility xmi:id="_e6A_1-T6Ee22rp5Kgxfxyw" label="#"/>
+      <cardinality xmi:id="_e6A_2OT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+      <parameters xmi:id="_e6A_2eT6Ee22rp5Kgxfxyw" name="req">
+        <modelElement href="DanBeck2.uml#_dCcaMeT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6A_2uT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6A_2-T6Ee22rp5Kgxfxyw" name="HttpServletRequest">
+          <modelElement href="DanBeck2.uml#_dBW1EeT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_e6A_3OT6Ee22rp5Kgxfxyw" name="resp">
+        <modelElement href="DanBeck2.uml#_dCcaMuT6Ee22rp5Kgxfxyw"/>
+        <cardinality xmi:id="_e6A_3eT6Ee22rp5Kgxfxyw" label="1" max="1" min="1"/>
+        <type xmi:id="_e6A_3uT6Ee22rp5Kgxfxyw" name="HttpServletResponse">
+          <modelElement href="DanBeck2.uml#_dBYDMOT6Ee22rp5Kgxfxyw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

@@ -20,9 +20,9 @@
 <!--    <input id="keyChack" type="text" name="keyChack" value="" style="visibility:hidden;"> -->
 <!--    <input id="idChack" type="text" name="idChack" value="" style="visibility:hidden;"> -->
 <!--    <input id="nickChack" type="text" name="nickChack" value="" style="visibility:hidden;"> -->
-		<input id="keyChack" type="text" name="keyChack" value="">
-	   <input id="idChack" type="text" name="idChack" value="" >
-	   <input id="nickChack" type="text" name="nickChack" value="" >
+		<input id="keyChack" type="hidden" name="keyChack" value="">
+	   <input id="idChack" type="hidden" name="idChack" value="" >
+	   <input id="nickChack" type="hidden" name="nickChack" value="" >
       <div class="form-box"><br>
       <div class="form-group">
          ＊ID:       <input type="text" id="id" name="user_id" placeholder="아이디를 입력하세요" />
@@ -117,6 +117,11 @@ $(function() {
         			console.log("ajax 돌아옴")
 	        	   console.log(data.idchack);
 	        	   $("#idChack").val(data.idchack);
+	        	   if (data.idchack!=="아이디중복없음") {
+                       alert("아이디가 중복됩니다. 다른 아이디를 사용해주세요.");
+                   } else {
+                       alert("사용 가능한 아이디입니다.");
+                   }
 	        	},  // 요청 성공 시 호출할 메서드 설정
         error : errFunc         // 요청 실패 시 호출할 메서드 설정
       });
@@ -137,6 +142,11 @@ $(function() {
         			console.log("ajax 돌아옴")
 	        	   console.log(data.nickchack);
 	        	   $("#nickChack").val(data.nickchack);
+	        	   if (data.nickchack!=="닉네임중복없음") {
+                       alert("닉네임이 중복됩니다. 다른 아이디를 사용해주세요.");
+                   } else {
+                       alert("사용 가능한 닉네임입니다.");
+                   }
 	        	},  // 요청 성공 시 호출할 메서드 설정
         error : errFunc         // 요청 실패 시 호출할 메서드 설정
       });
@@ -179,6 +189,12 @@ $(function() {
         	console.log("에이작스 부분 돌아옴");
         	console.log(data.keychack);
         	$("#keyChack").val(data.keychack);
+        	if (data.keychack!=="메일인증성공") {
+                alert("인증번호가 다름니다 다시 입력해주세요");
+            } else {
+                alert("메일인증 성공");
+            }
+        	
 		},
 		error : errFunc// 요청 실패 시 호출할 메서드 설정
       });

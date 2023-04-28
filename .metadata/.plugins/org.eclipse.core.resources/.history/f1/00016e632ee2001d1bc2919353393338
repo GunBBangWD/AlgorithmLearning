@@ -1,0 +1,46 @@
+package user;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.JsonObject;
+
+@WebServlet("/user/IdPwChack")
+public class IdPwChack extends HttpServlet{
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		UsersDaoGun dao = new UsersDaoGun();
+		String idchack = "아이디찾기여부확인메시지";
+		String pwchack = "비밀번호찾기여부확인메시지";
+		if(request.getParameter("id").equals("아이디찾기")) {
+		
+			idchack=dao.idCheck(request.getParameter("name"), request.getParameter("email"));
+
+		}else {
+			System.out.println("아이디 있음?");
+			
+		}
+		
+		
+		
+		System.out.println("아이디체크 두포스트진입:  "+request.getParameter("name"));
+		System.out.println("아이디체크 두포스트진입:  "+request.getParameter("email"));
+	
+		
+		JsonObject jsonObject = new JsonObject();
+		jsonObject.addProperty("message", idchack);
+		
+		dao.close();
+	    response.setContentType("application/json;charset=utf-8");
+        response.getWriter().write(jsonObject.toString());
+	}
+
+}
+
+

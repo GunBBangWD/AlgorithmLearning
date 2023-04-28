@@ -34,6 +34,7 @@ public class RecipeViewController extends HttpServlet{
 		RecipeReviewDao ReviewDao = new RecipeReviewDao();
 		RecipeCommentDao commentDao = new RecipeCommentDao();
 		ReviewImgDao ReviewImageDao = new ReviewImgDao();
+		recipeDao.updateVisitCount(recipe_id);
 		RecipeDto recipeDto = recipeDao.detailView(recipe_id);
 		List<RecipeIngredientDto> ingreList = recipeIngredientDao.detailView(recipe_id); 
 		List<RecipeStepDto> stepList = stepDao.detailView(recipe_id);
@@ -42,23 +43,12 @@ public class RecipeViewController extends HttpServlet{
 		List<RecipeCommentDto> commentList = commentDao.detailView(recipe_id);
 		int commentCount = commentDao.getCommentCount(recipe_id);
 		
-		
 		List<ReviewImgDto> reviewImgList = new ArrayList<>(); 
 		for (RecipeReviewDto review : ReviewList) {
 		    List<ReviewImgDto> images = ReviewImageDao.getImgList(recipe_id, review.getReview_id());
 		    reviewImgList.addAll(images); 
 		}
 		
-		recipeDao.close();
-		recipeIngredientDao.close();
-		stepDao.close();
-		ReviewDao.close();
-		commentDao.close();
-		ReviewImageDao.close();
-		
-		
-		
-//		System.out.println(recipeDto);
 		req.setAttribute("recipeDto", recipeDto);
 		req.setAttribute("ingreList", ingreList);
 		req.setAttribute("stepList", stepList);
@@ -67,6 +57,12 @@ public class RecipeViewController extends HttpServlet{
 		req.setAttribute("commentList", commentList);
 		req.setAttribute("commentCount", commentCount);
 		req.setAttribute("reviewImgList", reviewImgList);
+		recipeDao.close();
+		recipeIngredientDao.close();
+		stepDao.close();
+		ReviewDao.close();
+		commentDao.close();
+		ReviewImageDao.close();
 		req.getRequestDispatcher("../RecipeProject/RecipeView.jsp").forward(req, resp);
 	}
 }

@@ -1,0 +1,13 @@
+package recipe.controller;
+
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@MultipartConfig(maxFileSize = 1024 * 1024 * 50)
+
+@WebServlet("/project/RecipeEdit.do")
+public class RecipeEditController extends HttpServlet {
+public class RecipeDeleteController {
+
+}

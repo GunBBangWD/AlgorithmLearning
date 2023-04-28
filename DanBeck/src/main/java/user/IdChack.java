@@ -19,6 +19,7 @@ public class IdChack extends HttpServlet{
 		System.out.println("아이디체크 두포스트진입:  "+request.getParameter("id"));
 		UsersDaoGun dao = new UsersDaoGun();
 		
+		
 		JsonObject jsonObject = new JsonObject();
 		if(dao.idDuplicateCheck(request.getParameter("id"))) {
 			System.out.println("아이디중복없음");

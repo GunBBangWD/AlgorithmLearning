@@ -206,8 +206,8 @@ public class RecipeEditController extends HttpServlet {
 						if (!file.getName().equals("fileUpload")) {
 							continue;
 						}else {
-//							System.out.println("파일 처리 반복부분");
-//							System.out.println(file);
+							System.out.println("파일 처리 반복부분");
+							System.out.println(file);
 							String originName = file.getSubmittedFileName();
 							String ext = originName.substring(originName.lastIndexOf("."));
 							String newFileName = recipe_id + "_" + imageIndex + ext;

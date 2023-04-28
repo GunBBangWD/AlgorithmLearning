@@ -27,6 +27,7 @@ public class UsersDaoGun extends DBConnectpool {
 		return result;
 	}
 	
+	
 	public SessionDto sessionLogin(String idx) {
 		SessionDto dto = new SessionDto();
 		String sql="select * from users where user_idx=?";
@@ -85,6 +86,7 @@ public class UsersDaoGun extends DBConnectpool {
 		return res;
 	}
 	
+	
 	public boolean nickDuplicateCheck(String user_nickname) {
 		boolean res = true;
 		String sql = "select user_nickname from users where user_nickname=?";
@@ -102,4 +104,49 @@ public class UsersDaoGun extends DBConnectpool {
 		}		
 		return res;
 	}
+	
+	
+	public String idCheck(String user_name, String user_email) {
+		String res = "정보와 일치하는 아이디 없음";
+		String sql = "SELECT user_id FROM users WHERE user_name=? AND user_email=?";
+		try {
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, user_name);
+			psmt.setString(2, user_email);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				res=rs.getString("user_id");
+				System.out.println("있음");
+			}
+		} catch (Exception e) {
+			System.out.println("아이디찾기중 DB 에러");
+			e.printStackTrace();
+		}		
+		return res;
+	}
+	
+	public String pwCheck(String user_id, String user_name, String user_email) {
+		String res = "정보와 일치하는 비밀번호 없음";
+		String sql = "SELECT user_pw FROM users WHERE user_id=? AND user_name=? AND user_email=?";
+		System.out.println(user_id);
+		System.out.println(user_name);
+		System.out.println(user_email);
+		try {
+			psmt=con.prepareStatement(sql);
+			psmt.setString(1, user_id);
+			psmt.setString(2, user_name);
+			psmt.setString(3, user_email);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				res=rs.getString("user_pw");
+				System.out.println("있음");
+			}
+		} catch (Exception e) {
+			System.out.println("비번찾기 DB 에러");
+			e.printStackTrace();
+		}		
+		return res;
+	}
+	
+	
 }

@@ -35,6 +35,7 @@
                 <div class="form-group d-flex justify-content-center align-items-center">
                     <input type="submit" class="btn btn-primary" value="로그인" style="margin: 10px;">
                     <input type="button" class="btn btn-primary" value="회원가입" style="margin: 10px;" onclick="window.location.href='Join.jsp';">
+                    <input type="button" class="btn btn-primary" value="ID/PW찾기" style="margin: 10px;" onclick="window.location.href='IdPw.jsp';">
                 </div>
             </form>
         </div>

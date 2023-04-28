@@ -8,6 +8,12 @@
     <fullyQualifiedTypeName name="recipe.utility.NaverSmtp"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="recipe.utility.Alert"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="recipe.dao.RecipeDao"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="recipe.dto.PageDto"/>
+    <fullyQualifiedTypeName name="recipe.dao.RecipeCategoryKindDao"/>
+    <fullyQualifiedTypeName name="recipe.dto.RecipeCategoryKindDto"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

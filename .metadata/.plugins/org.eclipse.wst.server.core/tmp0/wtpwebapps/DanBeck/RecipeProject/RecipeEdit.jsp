@@ -51,8 +51,12 @@
 <!-- 				<input type="file" name="mainPhotoUpload" class="mainPhotoUpload" id="mainPhotoUpload" style="display: none;"> -->
 <%-- 				<img id="mainPhotoHolder" onclick="browseMainFile()" src="${pageContext.request.contextPath}/Storage/${recipeDto.recipe_image_url}" style="width: 250px; height: 250px; cursor:pointer"> --%>
 <!-- 				<input type="file" id="inputFile" onchange="loadFile(event)" style="display:none"> -->
-				<img id="mainPhotoHolder" src="${pageContext.request.contextPath}/Storage/${recipeDto.recipe_image_url}" style="width: 250px; height: 250px; cursor:pointer">
-				<input type="file" id="inputFile" name="mainPhotoUpload" onchange="loadMainFile(event)" style="display:none">
+<%-- 				<img id="mainPhotoHolder" src="${pageContext.request.contextPath}/Storage/${recipeDto.recipe_image_url}" style="width: 250px; height: 250px; cursor:pointer"> --%>
+<!-- 				<input type="file" id="inputFile" name="mainPhotoUpload" onchange="loadMainFile(event)" style="display:none"> -->
+				<img id="mainPhotoHolder" onclick="browseMainFile()" src="${pageContext.request.contextPath}/Storage/${recipeDto.recipe_image_url}"
+                  style="width: 250px; height: 250px; cursor:pointer">
+                <input type="file" name="mainPhotoUpload" class="mainPhotoUpload" id="mainPhotoUpload"
+                  style="display: none;">
 				
 			</div>
 			<div class="summary_category">

@@ -6,32 +6,32 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Dao"/>
+		<item key="selection" value="PageDto"/>
 		<list key="findhistory">
+			<item value="PageDto"/>
 			<item value="dao"/>
-			<item value="RecipeInsert"/>
-			<item value="insertReview"/>
-			<item value="alertBack"/>
-			<item value="insertSteps"/>
-			<item value="al"/>
-			<item value="sample6_execDaumPostcode"/>
-			<item value="m_addr"/>
-			<item value="checkNick"/>
-			<item value="nick"/>
 			<item value="dto"/>
-			<item value="user"/>
-			<item value="user_idx"/>
-			<item value="user_id"/>
-			<item value="delete-comment"/>
+			<item value="back"/>
+			<item value="recipeView"/>
+			<item value="recipeDto"/>
+			<item value="loadMainFile"/>
+			<item value="browseMainFile"/>
+			<item value="mainPhotoUpload"/>
+			<item value="stepDivPhoto"/>
+			<item value="addStepDetailGroup"/>
+			<item value="displayImage"/>
+			<item value="Rec"/>
+			<item value="rec"/>
+			<item value="nick"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="158"/>
-		<item key="DIALOG_Y_ORIGIN" value="213"/>
+		<item key="DIALOG_X_ORIGIN" value="984"/>
+		<item key="DIALOG_Y_ORIGIN" value="367"/>
 		<item key="DIALOG_WIDTH" value="322"/>
-		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_HEIGHT" value="377"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

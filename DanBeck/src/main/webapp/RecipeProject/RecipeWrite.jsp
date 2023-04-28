@@ -31,8 +31,8 @@
         <div class="insert_form">
           <form action="../project/recipeWrite.do" method="post" onsubmit="return validateForm(this)"
             enctype="multipart/form-data">
-            <input name="user_idx" type="text" value="${sessionScope.user.user_idx}" />
-            <h3>${sessionScope.user.user_idx}</h3>
+            <input name="user_idx" type="hidden" value="${sessionScope.user.user_idx}" />
+            
             <div class="insert_form_title">
               <b>레시피 등록</b>
             </div>
@@ -50,85 +50,27 @@
                 <input type="file" name="mainPhotoUpload" class="mainPhotoUpload" id="mainPhotoUpload"
                   style="display: none;">
               </div>
-              <div class="summary_category">
-                <b>카테고리</b> <select name="select_category_1" id="select_category_1">
-                  <optgroup>
-                    <option>종류별</option>
-                    <option value="1">밑반찬</option>
-                    <option value="2">메인반찬</option>
-                    <option value="3">국/탕</option>
-                    <option value="4">찌개</option>
-                    <option value="5">디저트</option>
-                    <option value="6">면/만두</option>
-                    <option value="7">밥/죽/떡</option>
-                    <option value="8">퓨전</option>
-                    <option value="9">김치/젓갈/장류</option>
-                    <option value="10">양념/소스/잼</option>
-                    <option value="11">양식</option>
-                    <option value="12">샐러드</option>
-                    <option value="13">스프</option>
-                    <option value="14">빵/과자</option>
-                    <option value="15">차/음료/술</option>
-                    <option value="16">기타</option>
-                  </optgroup>
-                </select> <select name="select_category_2" id="select_category_2">
-                  <optgroup>
-                    <option>상황별</option>
-                    <option value="1">일상</option>
-                    <option value="2">초스피드</option>
-                    <option value="3">손님접대</option>
-                    <option value="4">술안주</option>
-                    <option value="5">다이어트</option>
-                    <option value="6">도시락</option>
-                    <option value="7">영양식</option>
-                    <option value="8">간식</option>
-                    <option value="9">야식</option>
-                    <option value="10">푸드스타일링</option>
-                    <option value="11">해장</option>
-                    <option value="12">명절</option>
-                    <option value="13">이유식</option>
-                    <option value="14">기타</option>
-                  </optgroup>
-                </select> <select name="select_category_3" id="select_category_3">
-                  <optgroup>
-                    <option>방법별</option>
-                    <option value="1">볶음</option>
-                    <option value="2">끓이기</option>
-                    <option value="3">부침</option>
-                    <option value="4">조림</option>
-                    <option value="5">무침</option>
-                    <option value="6">비빔</option>
-                    <option value="7">찜</option>
-                    <option value="8">절임</option>
-                    <option value="9">튀김</option>
-                    <option value="10">삶기</option>
-                    <option value="11">굽기</option>
-                    <option value="12">데치기</option>
-                    <option value="13">회</option>
-                    <option value="14">기타</option>
-                  </optgroup>
-                </select> <select name="select_category_4" id="select_category_4">
-                  <optgroup label="재료별">
-                    <option>재료별</option>
-                    <option value="1">소고기</option>
-                    <option value="2">돼지고기류</option>
-                    <option value="3">닭류</option>
-                    <option value="4">육류</option>
-                    <option value="5">채소류</option>
-                    <option value="6">해물류</option>
-                    <option value="7">달걀/유제품</option>
-                    <option value="8">가공식품류</option>
-                    <option value="9">쌀</option>
-                    <option value="10">밀가루</option>
-                    <option value="11">건어물류</option>
-                    <option value="12">버섯류</option>
-                    <option value="13">과일류</option>
-                    <option value="14">콩/견과류</option>
-                    <option value="15">곡류</option>
-                    <option value="16">기타</option>
-                  </optgroup>
-                </select>
-              </div>
+             <div class="summary_category">
+				<b>카테고리</b> 
+				<select name="cate1" id="select_category_1">
+					<optgroup>
+						<option>종류별</option>
+						<c:forEach var="cate1" items="${map.cate1}">
+						<option value="${cate1.category_kind_idx}">${cate1.category_kind_name}
+						</option>
+						</c:forEach>
+					</optgroup>
+				</select> 
+				<select name="cate2" id="select_category_2">
+					<optgroup>
+						<option>상황별</option>
+						<c:forEach var="cate2" items="${map.cate2}">
+						<option value="${cate2.category_kind_idx }">${cate2.category_kind_name}
+						</option>
+						</c:forEach>
+					</optgroup>
+				</select> 
+			</div>
               <br>
               <div class="summary_recipe_info">
                 <p>
