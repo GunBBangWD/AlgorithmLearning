@@ -1,0 +1,14 @@
+127.0.0.1 - - [19/May/2023:16:21:14 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:15 +0900] "GET /DanBeck/RecipeProject/RecipeList.jsp HTTP/1.1" 200 5162
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:15 +0900] "GET /DanBeck/projectResources/img/%EB%A1%9C%EA%B3%A0.png HTTP/1.1" 200 60083
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:16 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:18 +0900] "GET /DanBeck/project/recipeWrite.do HTTP/1.1" 200 15031
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:18 +0900] "GET /DanBeck/projectResources/css/RecipeInsert.css HTTP/1.1" 200 869
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:18 +0900] "GET /DanBeck/projectResources/javascript/Insert.js HTTP/1.1" 200 5796
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:18 +0900] "GET /DanBeck/projectResources/img/camera.jpg HTTP/1.1" 200 6274
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:18 +0900] "GET /DanBeck/projectResources/img/x-mark.png HTTP/1.1" 200 14130
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:18 +0900] "GET /DanBeck/projectResources/img/imageAdd.png HTTP/1.1" 200 578
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:18 +0900] "GET /DanBeck/projectResources/img/file-x.svg HTTP/1.1" 200 491
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:20 +0900] "GET /DanBeck/project/loginCheck.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:20 +0900] "GET /DanBeck/RecipeProject/Login.jsp HTTP/1.1" 200 2381
+0:0:0:0:0:0:0:1 - - [19/May/2023:16:21:22 +0900] "GET /DanBeck/RecipeProject/Join.jsp HTTP/1.1" 200 9658
